@@ -23,11 +23,9 @@ pkgbase = mve-git
 	source = mve-git-wiki::git+https://github.com/simonfuhrmann/mve.wiki.git
 	source = git+https://github.com/nmoehrle/mvs-texturing.git
 	source = git+https://github.com/flanggut/smvs.git
-	source = gtest.patch
 	sha256sums = SKIP
 	sha256sums = SKIP
 	sha256sums = SKIP
 	sha256sums = SKIP
-	sha256sums = 1077e884f2ed19efefa8b65676ee117d039c66e64b481f7fb5887042b90cb9ae
 
 pkgname = mve-git

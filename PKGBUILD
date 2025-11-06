@@ -15,13 +15,11 @@ source=("${pkgname}::git+https://github.com/simonfuhrmann/mve.git"
         "${pkgname}-wiki::git+https://github.com/simonfuhrmann/mve.wiki.git"
         "git+https://github.com/nmoehrle/mvs-texturing.git"
         "git+https://github.com/flanggut/smvs.git"
-        'gtest.patch'
        )
 sha256sums=('SKIP'
             'SKIP'
             'SKIP'
-            'SKIP'
-            '1077e884f2ed19efefa8b65676ee117d039c66e64b481f7fb5887042b90cb9ae')
+            'SKIP')
 _binar=(apps/sfmrecon/sfmrecon
         apps/meshconvert/meshconvert
         apps/meshalign/meshalign
@@ -38,7 +36,6 @@ _binar=(apps/sfmrecon/sfmrecon
 
 prepare() {
   cd "${srcdir}"/${pkgname}
-  git apply -v "${srcdir}"/gtest.patch
   sed -i '/CXXFLAGS*/s/$/ -msse4.2/' libs/sfm/Makefile
   cd "${srcdir}"/smvs
   sed -i "s:msse4.1:msse4.2:" lib/Makefile tools/Makefile app/Makefile
