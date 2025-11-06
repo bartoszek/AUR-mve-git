@@ -40,7 +40,8 @@ prepare() {
   cd "${srcdir}"/smvs
   sed -i "s:msse4.1:msse4.2:" lib/Makefile tools/Makefile app/Makefile
   sed -i "s:mve:mve-git:" Makefile.inc
-  sed -i "s:util/string.h:util/strings.h:" app/smvsrecon.cc
+  sed -i "s:util/strings.h:strings.h:" app/smvsrecon.cc
+  sed -i "s:util/strings.h:strings.h:" tools/simplify.cc
 }
 
 pkgver() {
