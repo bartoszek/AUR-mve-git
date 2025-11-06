@@ -8,7 +8,7 @@ url="http://www.gcc.tu-darmstadt.de/home/proj/mve/"
 license=('BSD' 'GPL')
 groups=()
 depends=('libjpeg' 'libtiff' 'libpng' 'libgl' 'qt5-base' 'intel-tbb' 'eigen')
-makedepends=('git' 'go-md2man' 'cmake' 'gtest' )
+makedepends=('git' 'go-md2man' 'cmake' 'gtest' 'gcc13')
 provides=()
 options=()
 source=("${pkgname}::git+https://github.com/simonfuhrmann/mve.git"
@@ -72,7 +72,10 @@ build() {
     Propagation instead of Graph Cut Optimization."
   export CXXFLAGS+=" -std=c++11"
   cmake -S "${srcdir}"/mvs-texturing -B build-mvs-texturing \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
         -DCMAKE_CXX_FLAGS=-std=gnu++11 \
+        -DCMAKE_C_COMPILER=gcc-13 \
+        -DCMAKE_CXX_COMPILER=g++-13 \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr
   make -C build-mvs-texturing
