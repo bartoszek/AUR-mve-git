@@ -1,7 +1,7 @@
 # Maintainer : bartus <arch-user-repoᘓbartus.33mail.com>
 pkgname=mve-git
-pkgver=r1316.65f677e
-pkgrel=2
+pkgver=r1353.48a69d0
+pkgrel=1
 pkgdesc="Image-based geometry reconstruction pipeline, structure-from-motion, (shading-aware) multi-view-stereo, surface-reconstruction, texturing,"
 arch=('i686' 'x86_64')
 url="http://www.gcc.tu-darmstadt.de/home/proj/mve/"
